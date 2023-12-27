@@ -1,0 +1,30 @@
+{
+	"height": 30,
+	"modules-left": [],
+	"modules-center": ["clock"],
+	"modules-right": [
+		"sway/language",
+		"pulseaudio"
+	],
+
+	"clock": {
+		"timezone": "Europe/Moscow",
+		"format": "{:%a, %d  %B %H:%M}"
+	},
+
+	"sway/language": {
+		"format": " {}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+			"format-icons": {
+				"default": [
+					"",
+					"",
+					""
+				]
+		}
+	}
+}
