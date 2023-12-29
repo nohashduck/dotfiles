@@ -9,7 +9,7 @@ bar {
 	swaybar_command waybar
 }
 
-output HDMI-A-1 {
+output * {
 	bg /home/$(whoami)/Pictures/Wallpaper.jpg fill
 }
 
