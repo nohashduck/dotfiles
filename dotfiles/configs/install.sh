@@ -9,10 +9,9 @@ yes | sudo cp -rf ./nvim /home/$(whoami)/.config/nvim
 yes | sudo cp -rf ./sway /home/$(whoami)/.config/sway
 yes | sudo cp -rf ./waybar /home/$(whoami)/.config/waybar
 yes | sudo cp -rf ./zsh/.zshrc /home/$(whoami)/.zshrc
+sudo chmod -R 777 /home/$(whoami)
 
 git clone https://github.com/nohashduck/grub.git
 yes | sudo cp -r grub/grub/theme /usr/share/grub/themes/grub
 sudo sed -i "s/GRUB_THEME=.*/GRUB_THEME=\/usr\/share\/grub\/themes\/grub/" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-sudo chmod -R 777 /home/$(whoami)
