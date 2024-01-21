@@ -1,4 +1,4 @@
-yes | sudo pacman -Syu neofetch kitty neovim ranger htop firefox sway swaybg waybar fuzzel mako pulseaudio pulseaudio-alsa grim wl-clipboard libnotify zsh cantarell-fonts otf-font-awesome
+sudo pacman -Syu neofetch kitty neovim ranger htop firefox sway swaybg waybar fuzzel mako pulseaudio pulseaudio-alsa grim wl-clipboard libnotify zsh cantarell-fonts otf-font-awesome
 
 mkdir /home/$(whoami)/Pictures
 yes | sudo cp -rf ../images/wallpaper.jpg /home/$(whoami)/Pictures/Wallpaper.jpg
@@ -13,5 +13,6 @@ sudo chmod -R 777 /home/$(whoami)
 
 git clone https://github.com/nohashduck/grub.git
 yes | sudo cp -r grub/grub/theme /usr/share/grub/themes/grub
+sudo sed -i "s/#GRUB_THEME=.*/GRUB_THEME=/" /etc/default/grub
 sudo sed -i "s/GRUB_THEME=.*/GRUB_THEME=\/usr\/share\/grub\/themes\/grub/" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
