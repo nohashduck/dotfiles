@@ -13,13 +13,13 @@ output * {
 	bg /home/$(whoami)/Pictures/Wallpaper.jpg fill
 }
 
-font Cantarell 10
+font Iosevka 15
 smart_gaps on
 gaps inner 10
-gaps outer 4
+gaps outer 5
 smart_borders on
-default_border pixel 1
-client.focused #047dce #047dce #047dce #047dce
+default_border pixel 3
+client.focused #E2E0DB #E2E0DB #E2E0DB #E2E0DB
 client.focused_inactive #00000040 #00000040 #00000040 #00000040
 client.unfocused #00000040 #00000040 #00000040 #00000040
 client.urgent #00000040 #00000040 #00000040 #00000040
