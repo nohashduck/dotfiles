@@ -1,4 +1,4 @@
-sudo pacman -Syu neofetch kitty neovim ranger htop firefox sway swaybg waybar fuzzel mako pulseaudio pulseaudio-alsa grim wl-clipboard libnotify zsh cantarell-fonts ttc-iosevka tttf-nerd-fonts-symbols-mono
+sudo pacman -Syu neofetch kitty neovim ranger htop firefox sway swaybg waybar fuzzel mako pulseaudio alsa-lib alsa-utils grim wl-clipboard libnotify zsh cantarell-fonts ttc-iosevka ttf-iosevka-nerd
 
 mkdir /home/$(whoami)/Pictures
 yes | sudo cp -rf ../images/wallpaper.jpg /home/$(whoami)/Pictures/Wallpaper.jpg
