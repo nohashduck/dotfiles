@@ -23,7 +23,6 @@ require("lazy").setup({
         "navarasu/onedark.nvim",
 		priority = 1000,
         config = function()
-	        vim.opt.shell = "bin/zsh";
 	        vim.opt.clipboard = "unnamedplus";
 
 	        vim.opt.mouse = "a";
@@ -170,4 +169,3 @@ require("lazy").setup({
 		end
 	},
 });
-
