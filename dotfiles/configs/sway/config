@@ -67,3 +67,5 @@ bindsym mod4+up focus up
 bindsym mod4+shift+up move up
 bindsym mod4+right focus right
 bindsym mod4+shift+right move right
+
+bindsym mod4+shift+space floating toggle
