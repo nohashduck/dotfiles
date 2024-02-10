@@ -8,6 +8,7 @@ yes | sudo cp -rf ./mako /home/$(whoami)/.config/mako
 yes | sudo cp -rf ./nvim /home/$(whoami)/.config/nvim
 yes | sudo cp -rf ./sway /home/$(whoami)/.config/sway
 yes | sudo cp -rf ./waybar /home/$(whoami)/.config/waybar
+yes | sudo cp -rf ./neofetch /home/$(whoami)/.config/neofetch
 yes | sudo cp -rf ./zsh/.zshrc /home/$(whoami)/.zshrc
 
 git clone https://github.com/alexanderjeurissen/ranger_devicons /home/$(whoami)/.config/ranger/plugins/ranger_devicons
