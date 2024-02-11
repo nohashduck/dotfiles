@@ -26,13 +26,7 @@ client.urgent #00000040 #00000040 #00000040 #00000040
 client.placeholder #00000040 #00000040 #00000040 #00000040
 
 bindsym mod4+return exec kitty
-bindsym --to-code mod4+d exec fuzzel \
-	--terminal kitty \
-	--no-icons \
-	--selection-text-color=#047DCEAA \
-	--selection-match-color=#047DCEAA \
-	--match-color=#047DCEAA \
-	--no-fuzzy \
+bindsym --to-code mod4+d exec fuzzel
 
 bindsym print exec /home/$(whoami)/.config/grim/grim.sh
 bindsym --to-code mod4+shift+c reload
