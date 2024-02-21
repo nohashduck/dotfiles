@@ -19,5 +19,5 @@ sudo chmod -R 777 /home/$(whoami)
 git clone https://github.com/nohashduck/grub.git
 yes | sudo cp -r grub/grub/theme /usr/share/grub/themes/grub
 sudo sed -i "s/#GRUB_THEME=.*/GRUB_THEME=/" /etc/default/grub
-sudo sed -i "s/GRUB_THEME=.*/GRUB_THEME=\/usr\/share\/grub\/themes\/grub/" /etc/default/grub
+sudo sed -i "s/GRUB_THEME=.*/GRUB_THEME=\/usr\/share\/grub\/themes\/grub/theme.txt" /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
