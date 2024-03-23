@@ -24,7 +24,7 @@ fi
 
 sudo pacman -S neovim
 if [ $? -eq 0 ]; then
-    cp -rf ./configs/neovim/ /home/nohashduck/.config/nvim/
+    cp -rf ./configs/nvim/ /home/nohashduck/.config/nvim/
 fi
 
 sudo pacman -S ranger
