@@ -1,4 +1,6 @@
-exec_always mako
+exec_always {
+	mako
+}
 
 input * {
 	xkb_layout us,ru
