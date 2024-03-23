@@ -57,12 +57,12 @@ if [ $? -eq 0 ]; then
     cp -rf ./configs/fuzzel/ /home/nohashduck/.config/fuzzel/
 fi
 
-sudo pacman -S grim
+sudo pacman -S wl-clipboard grim
 if [ $? -eq 0 ]; then
     cp -rf ./configs/mako/ /home/nohashduck/.config/grim/
 fi
 
-sudo pacman -S mako
+sudo pacman -S libnotify mako
 if [ $? -eq 0 ]; then
     cp -rf ./configs/mako/ /home/nohashduck/.config/mako/
 fi
