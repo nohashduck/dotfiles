@@ -40,7 +40,7 @@ if [ $? -eq 0 ]; then
     cp -rf ./configs/kitty/ /home/nohashduck/.config/kitty/
 fi
 
-sudo pacman -S sway
+sudo pacman -S sway swaybg
 if [ $? -eq 0 ]; then
     cp -rf ./configs/sway/ /home/nohashduck/.config/sway/
     mkdir -p /home/nohashduck/Pictures/
