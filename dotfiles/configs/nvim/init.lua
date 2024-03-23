@@ -23,21 +23,21 @@ require("lazy").setup({
         "navarasu/onedark.nvim",
 		priority = 1000,
         config = function()
-	        vim.opt.clipboard = "unnamedplus";
+			vim.opt.clipboard = "unnamedplus";
 
-	        vim.opt.mouse = "a";
-	        vim.opt.mousefocus = true;
+			vim.opt.mouse = "a";
+			vim.opt.mousefocus = true;
 
-	        vim.opt.shiftwidth = 4;
-	        vim.opt.tabstop = 4;
-	        vim.opt.smartindent = true;
+			vim.opt.shiftwidth = 4;
+			vim.opt.tabstop = 4;
+			vim.opt.smartindent = true;
 
-	        vim.wo.number = true;
-	        vim.wo.wrap = false;
-	        
+			vim.wo.number = true;
+			vim.wo.wrap = false;
+
 			require("onedark").setup({});
 			require("onedark").load();
-	    end
+		end
     },
 	{
 		"nvim-lualine/lualine.nvim",
@@ -64,7 +64,11 @@ require("lazy").setup({
 
 					},
 
-					lualine_x = {
+					lualine_x = {        cpp = function()
+            local cpp_opts = lsp_zero.clangd()
+            cpp_opts.cmd = { "clangd", "--config={\"compile_flags\":{\"std\":\"c++20\"}}" }
+            require('lspconfig').clangd.setup(cpp_opts)
+        end
 
 					},
 
@@ -152,20 +156,31 @@ require("lazy").setup({
 				window = {
 					completion = require("cmp").config.window.bordered(),
 					documentation = require("cmp").config.window.bordered()
-				}
+				},
+
+				mapping = {
+      				["<Tab>"] = require("cmp").mapping(require("cmp").mapping.select_next_item(), { "i", "s" }),
+      				["<S-Tab>"] = require("cmp").mapping(require("cmp").mapping.select_prev_item(), { "i", "s" }),
+					["<CR>"] = require("cmp").mapping.confirm({ select = true }),
+				},
 			});
 
 			require('mason').setup({})
 			require('mason-lspconfig').setup({
 				handlers = {
 					lsp_zero.default_setup,
+
+					cpp = function()
+						local cpp_opts = lsp_zero.clangd()
+						cpp_opts.cmd = { "clangd", "--config={\"compile_flags\":{\"std\":\"c++20\"}}" }
+						require('lspconfig').clangd.setup(cpp_opts)
+					end,
 					lua_ls = function()
-				  		local lua_opts = lsp_zero.nvim_lua_ls()
-				  		require('lspconfig').lua_ls.setup(lua_opts)
+						local lua_opts = lsp_zero.nvim_lua_ls()
+						require('lspconfig').lua_ls.setup(lua_opts)
 					end
-			  	}
+				}
 			});
-			
 		end
 	},
 });
