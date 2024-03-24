@@ -156,6 +156,12 @@ function lsp()
 				window = {
 					completion = require("cmp").config.window.bordered(),
 					documentation = require("cmp").config.window.bordered()
+				},
+					
+				mapping = {
+      				["<Tab>"] = require("cmp").mapping(require("cmp").mapping.select_next_item(), { "i", "s" }),
+      				["<S-Tab>"] = require("cmp").mapping(require("cmp").mapping.select_prev_item(), { "i", "s" }),
+				["<CR>"] = require("cmp").mapping.confirm({ select = true }),
 				}
 			});
 
