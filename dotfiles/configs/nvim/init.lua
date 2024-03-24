@@ -11,36 +11,29 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-wakatime_total = " 0 mins";
-
-local wakatime_cli_handle = io.popen("/home/$(whoami)/.wakatime/wakatime-cli --today");
-wakatime_total = " " .. tostring(wakatime_cli_handle:read("*a"));
-wakatime_cli_handle:close();
-
 vim.g.mapleader = " ";
-require("lazy").setup({
-    {
-        "navarasu/onedark.nvim",
-		priority = 1000,
-        config = function()
-			vim.opt.clipboard = "unnamedplus";
+vim.opt.clipboard = "unnamedplus";
+vim.opt.shiftwidth = 4;
+vim.opt.tabstop = 4;
+vim.opt.smartindent = true;
+vim.wo.number = true;
+vim.wo.wrap = false;
 
-			vim.opt.mouse = "a";
-			vim.opt.mousefocus = true;
-
-			vim.opt.shiftwidth = 4;
-			vim.opt.tabstop = 4;
-			vim.opt.smartindent = true;
-
-			vim.wo.number = true;
-			vim.wo.wrap = false;
-
-			require("onedark").setup({});
+function onedark()
+	return {
+		"navarasu/onedark.nvim",
+		
+		config = function()
+			require("onedark").setup();
 			require("onedark").load();
 		end
-    },
-	{
+	};
+end
+
+function lualine()
+	return {
 		"nvim-lualine/lualine.nvim",
+		
 		config = function()
 			require("lualine").setup({
 				icons_enabled = true,
@@ -59,56 +52,60 @@ require("lazy").setup({
 						"filename",
 						"branch"
 					},
-
+					
 					lualine_c = {
-
+					
 					},
-
-					lualine_x = {        cpp = function()
-            local cpp_opts = lsp_zero.clangd()
-            cpp_opts.cmd = { "clangd", "--config={\"compile_flags\":{\"std\":\"c++20\"}}" }
-            require('lspconfig').clangd.setup(cpp_opts)
-        end
-
+					
+					lualine_x = { 
+					
 					},
-
-					lualine_y = {
-						function()
-							return wakatime_total;
-						end,
+					
+					lualine_y = { 
+					
 					},
-
+					
 					lualine_z = {
 						"filetype",
 					}
-				},
+				}
 			});
 		end
-	},
-	{
-		"folke/which-key.nvim"
-	},
-	{
+	};
+end
+
+function neotree()
+	return {
 		"nvim-neo-tree/neo-tree.nvim",
+		
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"MunifTanjim/nui.nvim"
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
 		},
-
+		
 		keys = {
-			{ "<leader>d", "<cmd>Neotree float<cr>", desc = "NeoTree" }
+			{ "<leader>d", "<cmd>Neotree float<cr>" }
 		},
-
+		
 		config = function()
-			require("neo-tree").setup();
+			require("neo-tree").setup({
+				popup_border_style = "rounded"
+			});
 		end
-	},
-	{
-		"wakatime/vim-wakatime"
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
+	};
+end
 
+function wakatime()
+	return {
+		"wakatime/vim-wakatime",
+	};
+end
+
+function treesitter()
+	return {
+		"nvim-treesitter/nvim-treesitter",
+	
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				syns_install = false,
@@ -119,9 +116,13 @@ require("lazy").setup({
 				}
 			});
 		end
-	},
-	{
+	};
+end
+
+function lsp()
+	return {
 		"VonHeikemen/lsp-zero.nvim",
+		
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
@@ -129,6 +130,10 @@ require("lazy").setup({
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-nvim-lsp",
 			"L3MON4D3/LuaSnip",
+		},
+
+		keys = {
+			{ "<leader>m", "<cmd>Mason<cr>" }
 		},
 
 		config = function()
@@ -166,21 +171,16 @@ require("lazy").setup({
 			});
 
 			require('mason').setup({})
-			require('mason-lspconfig').setup({
-				handlers = {
-					lsp_zero.default_setup,
-
-					cpp = function()
-						local cpp_opts = lsp_zero.clangd()
-						cpp_opts.cmd = { "clangd", "--config={\"compile_flags\":{\"std\":\"c++20\"}}" }
-						require('lspconfig').clangd.setup(cpp_opts)
-					end,
-					lua_ls = function()
-						local lua_opts = lsp_zero.nvim_lua_ls()
-						require('lspconfig').lua_ls.setup(lua_opts)
-					end
-				}
-			});
+			require('mason-lspconfig').setup({});
 		end
-	},
+	};
+end
+
+require("lazy").setup({
+  { onedark() },
+  { neotree() },
+  { wakatime() },
+  { lualine() },
+  { lsp() },
+  { treesitter() },
 });
