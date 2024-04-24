@@ -1,0 +1,1 @@
+sudo pacman -Syu git lazygit openssh zsh grub neofetch imagemagick neovim nodejs ranger htop kitty wlroots seatd sway swaybg waybar fuzzel wl-clipboard grim libnotify mako firefox pipewire pipewire-pulse wireplumber xdg-desktop-portal xdg-desktop-portal-wlr cantarell-fonts ttc-iosevka ttf-iosevka-nerd
