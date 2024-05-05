@@ -18,6 +18,7 @@ vim.opt.tabstop = 4;
 vim.opt.smartindent = true;
 vim.wo.number = true;
 vim.wo.wrap = false;
+vim.opt.expandtab = true;
 
 function onedark()
 	return {
