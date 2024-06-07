@@ -25,7 +25,9 @@ function onedark()
 		"navarasu/onedark.nvim",
 		
 		config = function()
-			require("onedark").setup();
+			require("onedark").setup {
+				style = "darker"
+			};
 			require("onedark").load();
 		end
 	};
