@@ -1,3 +1,5 @@
+exec_always mako
+
 bar {
     swaybar_command waybar
 }
