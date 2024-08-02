@@ -1,18 +1,14 @@
-exec_always {
-	mako
-}
-
-input * {
-	xkb_layout us,ru
-	xkb_options grp:win_space_toggle
-}
-
 bar {
 	swaybar_command waybar
 }
 
+input * {
+    xkb_layout us,ru
+	xkb_options grp:win_space_toggle
+}
+
 output * {
-	bg /home/$(whoami)/Pictures/Wallpaper.jpg fill
+	bg /home/$(whoami)/.config/swaybg/wallpaper.jpg fill
 }
 
 font Iosevka 15
@@ -28,16 +24,15 @@ client.urgent #00000040 #00000040 #00000040 #00000040
 client.placeholder #00000040 #00000040 #00000040 #00000040
 
 bindsym mod4+return exec kitty
-bindsym --to-code mod4+d exec fuzzel
-bindsym mod4+0 exec kitty pulsemixer
-bindsym mod4+equal exec pulsemixer --change-volume +1
-bindsym mod4+minus exec pulsemixer --change-volume -1
-
-bindsym print exec /home/$(whoami)/.config/grim/grim.sh
-bindsym --to-code mod4+shift+c reload
+bindsym print exec grim - | wl-copy
+bindsym --to-code mod4+v exec vieb
+bindsym --to-code mod4+h exec kitty htop
+bindsym --to-code mod4+p exec kitty pulsemixer
+bindsym --to-code mod4+shift+e systemctl poweroff
+bindsym --to-code mod4+shift+r systemctl reboot
 bindsym --to-code mod4+shift+q kill
+bindsym --to-code mod4+shift+c reload
 bindsym --to-code mod4+f fullscreen
-bindsym --to-code mod4+shift+e exec systemctl poweroff
 
 bindsym mod4+1 workspace number 1
 bindsym mod4+shift+1 move container to workspace number 1
@@ -57,14 +52,12 @@ bindsym mod4+8 workspace number 8
 bindsym mod4+shift+8 move container to workspace number 8
 bindsym mod4+9 workspace number 9
 bindsym mod4+shift+9 move container to workspace number 9
-
+bindsym mod4+up focus up
+bindsym mod4+shift+up move up
 bindsym mod4+left focus left
 bindsym mod4+shift+left move left
 bindsym mod4+down focus down
 bindsym mod4+shift+down move down
-bindsym mod4+up focus up
-bindsym mod4+shift+up move up
 bindsym mod4+right focus right
 bindsym mod4+shift+right move right
-
 bindsym mod4+shift+space floating toggle
