@@ -1,26 +1,21 @@
 #waybar {
-	font-family: Iosevka;
-	min-height: 30px;
-	background: rgba(0, 0, 0, 0.25);
+    font-family: Iosevka;
+    font-size: 15px;
+    font-weight: 400;
+    min-height: 30px;
+    background: rgba(0, 0, 0, 0.25);
 }
 
 #clock {
-	font-weight: 400;
-	font-size: 15px;
-	color: rgba(255, 255, 255, 255);
+    color: rgba(255, 255, 255, 255);
 }
 
 #language {
-	color: rgba(255, 255, 255, 255);
-	font-size: 15px;
-	font-weight: 400;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 255);
 }
 
 #pulseaudio {
-	padding-left: 14px;
-	padding-right: 14px;
-
-	color: rgba(255, 255, 255, 255);
-	font-size: 15px;
-	font-weight: 400;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 255);
 }
