@@ -1,14 +1,14 @@
 bar {
-	swaybar_command waybar
+    swaybar_command waybar
 }
 
 input * {
     xkb_layout us,ru
-	xkb_options grp:win_space_toggle
+    xkb_options grp:win_space_toggle
 }
 
 output * {
-	bg /home/$(whoami)/.config/swaybg/wallpaper.jpg fill
+    bg /home/$(whoami)/.config/swaybg/wallpaper.jpg fill
 }
 
 font Iosevka 15
