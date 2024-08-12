@@ -25,10 +25,11 @@ client.unfocused #00000040 #00000040 #00000040 #00000040
 client.urgent #00000040 #00000040 #00000040 #00000040
 client.placeholder #00000040 #00000040 #00000040 #00000040
 
-bindsym mod4+return exec kitty
-bindsym print exec grim - | wl-copy
+bindsym mod4+return exec /home/$(whoami)/.config/grim/grim.sh
+bindsym print exec /home/
 bindsym --to-code mod4+h exec kitty htop
 bindsym --to-code mod4+p exec kitty pulsemixer
+bindsym --to-code mod4+f exec firefox
 bindsym --to-code mod4+d exec fuzzel
 bindsym --to-code mod4+shift+e systemctl poweroff
 bindsym --to-code mod4+shift+r systemctl reboot
