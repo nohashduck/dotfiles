@@ -30,7 +30,7 @@ return {
                         action = 'Mason',
                     },
                     {
-                        icon = '  ',
+                        icon = ' ',
                         desc = ' Neotree',
                         desc_hl = 'String',
                         key = 'f',
