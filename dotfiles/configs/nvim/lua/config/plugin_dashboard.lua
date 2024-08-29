@@ -15,7 +15,7 @@ return {
                 center = {
                     {
                         icon = ' ',
-                        desc = ' Open lazy',
+                        desc = ' Lazy',
                         desc_hl = 'String',
                         key = 'l',
                         key_hl = 'Number',
