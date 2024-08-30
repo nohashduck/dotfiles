@@ -33,17 +33,9 @@ return {
                         icon = ' ',
                         desc = ' Neotree',
                         desc_hl = 'String',
-                        key = 'f',
+                        key = 'd',
                         key_hl = 'Number',
                         action = 'Neotree',
-                    },
-                    {
-                        icon = ' ',
-                        desc = ' Telescope',
-                        desc_hl = 'String',
-                        key = 'f',
-                        key_hl = 'Number',
-                        action = 'Telescope find_files',
                     },
                     {
                         icon = ' ',
