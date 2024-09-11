@@ -1,7 +1,7 @@
 font=Iosevka 10
 background-color=#00000040
 text-color=#FFFFFF
-ignore-timeout=1
+default-timeout=3000
 border-size=0
 border-radius=10
 padding=10
