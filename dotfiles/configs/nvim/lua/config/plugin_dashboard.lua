@@ -11,7 +11,7 @@ return {
         require('dashboard').setup {
             theme = 'doom',
             config = {
-                header = { "", "󰄛  nohashduck", ""},
+                header = { },
                 center = {
                     {
                         icon = ' ',
@@ -28,14 +28,6 @@ return {
                         key = 'm',
                         key_hl = 'Number',
                         action = 'Mason',
-                    },
-                    {
-                        icon = ' ',
-                        desc = ' Neotree',
-                        desc_hl = 'String',
-                        key = 'd',
-                        key_hl = 'Number',
-                        action = 'Neotree',
                     },
                     {
                         icon = ' ',
