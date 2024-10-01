@@ -30,4 +30,8 @@ require("lazy").setup({
     require("config.plugin_telescope"),
     require("config.plugin_treesitter"),
     require("config.plugin_lsp_zero"),
+    require("config.plugin_wakatime"),
+    require("config.plugin_pets"),
 })
+
+vim.cmd("PetsNewCustom dog black rolton");
