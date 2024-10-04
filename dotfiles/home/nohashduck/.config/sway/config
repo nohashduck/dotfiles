@@ -27,9 +27,7 @@ client.placeholder #00000040 #00000040 #00000040 #00000040
 
 bindsym print exec /home/$(whoami)/.config/grim/grim.sh
 bindsym mod4+return exec kitty
-bindsym --to-code mod4+h exec kitty htop
-bindsym --to-code mod4+p exec kitty pulsemixer
-bindsym --to-code mod4+d exec fuzzel
+bindsym --to-code mod4+b exec firefox
 bindsym --to-code mod4+shift+q kill
 bindsym --to-code mod4+shift+c reload
 bindsym --to-code mod4+f fullscreen
