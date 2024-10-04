@@ -1,5 +1,5 @@
 return {
-    "giusgad/pets.nvim",
+    "nohashduck/pets.nvim",
     dependencies = {
         "MunifTanjim/nui.nvim",
         "giusgad/hologram.nvim",
