@@ -10,7 +10,7 @@ sudo pacman -S neofetch imagemagick
 sudo pacman -S ranger
 sudo pacman -S kitty
 sudo pacman -S htop
-sudo pacman -S wlroots seatd sway swaybg waybar fuzzel
+sudo pacman -S wlroots seatd sway swaybg waybar
 sudo pacman -S wl-clipboard grim
 sudo pacman -S libnotify mako
 sudo pacman -S firefox
