@@ -10,6 +10,7 @@ input * {
 }
 
 output * {
+    mode 1920x1080@120Hz
     bg /home/$(whoami)/Pictures/Wallpaper.jpg fill
 }
 
